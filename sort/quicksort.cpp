@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-static int num = 0;
+static int cnt1 = 0, cnt2 = 0;
 
 void QuickSort(vector<int> S, int B, int T)
 {
@@ -22,12 +22,12 @@ void QuickSort(vector<int> S, int B, int T)
 			j--;
 		}
 
-		if(i<j){
+		if(cnt1++, i<j){
+			cnt2++;
 			int tmp = S[i];
 			S[i] = S[j];
 			S[j] = tmp;
 		}
-		num++;
 	}
 
 	int tmp = S[B];
@@ -38,30 +38,20 @@ void QuickSort(vector<int> S, int B, int T)
 	QuickSort(S, j+1, T);
 }
 
-int main(int argc, char* argv[])
+int main()
 {
-	if(argc != 2){
-		cerr << "ファイルを選択してください";
-		return -1;
-	}
-
-	ifstream in(argv[1]);
 	int datanum = 0;
-	in >> datanum;
+	cin >> datanum;
 	vector<int> S;
-
-	while(!in.eof()){
-		int s;
-		in >> s;
-		if(in.eof()){
-			break;
-		}
-		S.push_back(s);
-	}
+  for(int i = 0; i < datanum; i++){
+    int s;
+    cin >> s;
+    S.push_back(s);
+  }
 
 	QuickSort(S, 0, datanum - 1);
 
-	cout << "quickSort:" << num << endl;
+	cout << "quickSort:" << cnt1 << ":" << cnt2 << endl;
 
 	return 0;
 }

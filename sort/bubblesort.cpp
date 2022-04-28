@@ -3,13 +3,14 @@
 #include <vector>
 using namespace std;
 
-static int num = 0;
+static int cnt1 = 0, cnt2 = 0;
 
 void BubbleSort(vector<int> S, int N){
   bool flag;
   do{
     for(int i = 0; i < N - 1; i++){
-      if(S[i] > S[i + 1]){
+      if(cnt1++, S[i] > S[i + 1]){
+        cnt2++;
         int tmp = S[i];
         S[i] = S[i + 1];
         S[i + 1] = tmp;
@@ -17,40 +18,22 @@ void BubbleSort(vector<int> S, int N){
         flag = true;
       }
     }
-    num++;
   }while(flag);
 }
 
-int main(int argc, char* argv[])
+int main()
 {
-  cout << argc << argv[1] << endl;
-	if(argc != 2){
-		cerr << "ファイルを選択してください";
-		return -1;
-	}
-
-	ifstream in;
-  in.open(argv[1]);
-  if(!in.good()){
-    cerr <<"error" << endl;
-    return -1;
-  }
 	int datanum = 0;
-	in >> datanum;
-  cout << datanum;
+	cin >> datanum;
 	vector<int> S;
-
-	while(true){
-		int s;
-		in >> s;
-		if(in.eof()){
-			break;
-		}
-		S.push_back(s);
-	}
+  for(int i = 0; i < datanum; i++){
+    int s;
+    cin >> s;
+    S.push_back(s);
+  }
 
 	BubbleSort(S, 10);
 
-  cout << "bubbleSort:" << num << endl;
+  cout << "bubbleSort:" << cnt1 << ":" << cnt2 << endl;
 	return 0;
 }
