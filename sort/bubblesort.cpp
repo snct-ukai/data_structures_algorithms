@@ -29,7 +29,9 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
-	ifstream in(argv[1]);
+	ifstream in;
+  in.open(argv[1]);
+  cout << in.bad();
 	int datanum = 0;
 	in >> datanum;
 	vector<int> S;
