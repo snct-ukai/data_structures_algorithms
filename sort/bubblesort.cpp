@@ -31,12 +31,12 @@ int main(int argc, char* argv[])
 
 	ifstream in;
   in.open(argv[1]);
-  cout << in.bad();
 	int datanum = 0;
 	in >> datanum;
+  cout << datanum;
 	vector<int> S;
 
-	while(!in.eof()){
+	while(true){
 		int s;
 		in >> s;
 		if(in.eof()){
