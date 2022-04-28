@@ -23,7 +23,7 @@ void BubbleSort(vector<int> S, int N){
 
 int main(int argc, char* argv[])
 {
-  cout << argc << argv << endl;
+  cout << argc << argv[1] << endl;
 	if(argc != 2){
 		cerr << "ファイルを選択してください";
 		return -1;
