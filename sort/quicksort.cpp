@@ -30,6 +30,7 @@ void QuickSort(vector<int> S, int B, int T)
 		}
 	}
 
+	cnt2++;
 	int tmp = S[B];
 	S[B] = S[j];
 	S[j] = tmp;
