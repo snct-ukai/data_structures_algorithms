@@ -22,15 +22,13 @@ void QuickSort(vector<int> S, int B, int T)
 			j--;
 		}
 
-		if(cnt1++, i<j){
-			cnt2++;
+		if(i<j){
 			int tmp = S[i];
 			S[i] = S[j];
 			S[j] = tmp;
 		}
 	}
 
-	cnt2++;
 	int tmp = S[B];
 	S[B] = S[j];
 	S[j] = tmp;
