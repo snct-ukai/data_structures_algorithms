@@ -36,6 +36,9 @@ int main(int argc, char* argv[])
 	while(!in.eof()){
 		int s;
 		in >> s;
+		if(in.eof()){
+			break;
+		}
 		S.push_back(s);
 	}
 
