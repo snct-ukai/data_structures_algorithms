@@ -38,16 +38,23 @@ void QuickSort(vector<int> S, int B, int T)
 	QuickSort(S, j+1, T);
 }
 
-int main()
+int main(int argc, char* argv[])
 {
+	if(argc != 2){
+		cerr << "ファイルを選択してください";
+		return -1;
+	}
+
+	ifstream in(argv[1]);
 	int datanum = 0;
-	cin >> datanum;
+	in >> datanum;
 	vector<int> S;
-  for(int i = 0; i < datanum; i++){
-    int s;
-    cin >> s;
-    S.push_back(s);
-  }
+
+	while(!in.eof()){
+		int s;
+		in >> s;
+		S.push_back(s);
+	}
 
 	QuickSort(S, 0, datanum - 1);
 
