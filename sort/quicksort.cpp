@@ -57,7 +57,10 @@ int main(int argc, char* argv[])
 	}
 
 	QuickSort(S, 0, datanum - 1);
-
+	for(auto s : S){
+		cout << s << " ";
+	}
+	cout << endl;
 	cout << "quickSort:" << cnt1 << ":" << cnt2 << endl;
 
 	return 0;
