@@ -3,7 +3,9 @@
 #include <vector>
 using namespace std;
 
-void BubbleSort(int S[], int N){
+static int num = 0;
+
+void BubbleSort(vector<int> S, int N){
   bool flag;
   do{
     for(int i = 0; i < N - 1; i++){
@@ -15,22 +17,30 @@ void BubbleSort(int S[], int N){
         flag = true;
       }
     }
+    num++;
   }while(flag);
 }
 
-int main(){
-  int S[10] = {30, 100, 70, 90, 10, 50, 20, 60, 80, 40};
-  for(int i=0; i<10; i++){
-		cout << S[i] << ' ';
+int main(int argc, char* argv[])
+{
+	if(argc != 2){
+		cerr << "ファイルを選択してください";
+		return -1;
 	}
-	cout << '\n';
+
+	ifstream in(argv[1]);
+	int datanum = 0;
+	in >> datanum;
+	vector<int> S;
+
+	while(!in.eof()){
+		int s;
+		in >> s;
+		S.push_back(s);
+	}
 
 	BubbleSort(S, 10);
 
-	for(int i=0; i<10; i++){
-		cout << S[i] << ' ';
-	}
-	cout << '\n';
-
+  cout << "bubbleSort:" << num << endl;
 	return 0;
 }

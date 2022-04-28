@@ -1,7 +1,11 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
 using namespace std;
 
-void QuickSort(int S[], int B, int T)
+static int num = 0;
+
+void QuickSort(vector<int> S, int B, int T)
 {
 	if(B>=T)
 		return;
@@ -23,6 +27,7 @@ void QuickSort(int S[], int B, int T)
 			S[i] = S[j];
 			S[j] = tmp;
 		}
+		num++;
 	}
 
 	int tmp = S[B];
@@ -33,21 +38,27 @@ void QuickSort(int S[], int B, int T)
 	QuickSort(S, j+1, T);
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-	int S[10] = {30, 100, 70, 90, 10, 50, 20, 60, 80, 40};
-
-	for(int i=0; i<10; i++){
-		cout << S[i] << ' ';
+	if(argc != 2){
+		cerr << "ファイルを選択してください";
+		return -1;
 	}
-	cout << '\n';
 
-	QuickSort(S, 0, 9);
+	ifstream in(argv[1]);
+	int datanum = 0;
+	in >> datanum;
+	vector<int> S;
 
-	for(int i=0; i<10; i++){
-		cout << S[i] << ' ';
+	while(!in.eof()){
+		int s;
+		in >> s;
+		S.push_back(s);
 	}
-	cout << '\n';
+
+	QuickSort(S, 0, datanum - 1);
+
+	cout << "quickSort:" << num << endl;
 
 	return 0;
 }
