@@ -31,6 +31,10 @@ int main(int argc, char* argv[])
 
 	ifstream in;
   in.open(argv[1]);
+  if(!in.good()){
+    cerr <<"error" << endl;
+    return -1;
+  }
 	int datanum = 0;
 	in >> datanum;
   cout << datanum;
