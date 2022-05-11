@@ -5,16 +5,18 @@ using namespace std;
 
 static int cnt1 = 0, cnt2 = 0;
 
-void BubbleSort(vector<int>* S, int N){
+void BubbleSort(int S[], int N){
+	cnt1 = 0;
+	cnt2 = 0;
   bool flag;
   do{
     flag = false;
     for(int i = 0; i < N - 1; i++){
-      if(cnt1++, (*S)[i] > (*S)[i + 1]){
+      if(cnt1++, S[i] > S[i + 1]){
         cnt2++;
-        int tmp = (*S)[i];
-        (*S)[i] = (*S)[i + 1];
-        (*S)[i + 1] = tmp;
+        int tmp = S[i];
+        S[i] = S[i + 1];
+        S[i + 1] = tmp;
 
         flag = true;
       }
@@ -24,15 +26,12 @@ void BubbleSort(vector<int>* S, int N){
 
 int main(int argc, char* argv[])
 {
-	if(argc != 2){
-		cerr << "ファイルを選択してください";
-		return -1;
-	}
-
-	ifstream in(argv[1]);
-	int datanum = 0;
+	int* S;
+	ifstream in("./data10.txt");
+	int datanum;
 	in >> datanum;
-	vector<int> S;
+	S = new int[10];
+	int i = 0;
 
 	while(!in.eof()){
 		int s;
@@ -40,11 +39,73 @@ int main(int argc, char* argv[])
 		if(in.eof()){
 			break;
 		}
-		S.push_back(s);
+		S[i] = s;
+		i++;
 	}
+	in.close();
 
-	BubbleSort(&S, 10);
+	BubbleSort(S, datanum);
 
+  cout << "bubbleSort:" << cnt1 << ":" << cnt2 << endl;
+
+	in.open("./data100.txt");
+	in >> datanum;
+	S = new int[100];
+	i = 0;
+
+	while(!in.eof()){
+		int s;
+		in >> s;
+		if(in.eof()){
+			break;
+		}
+		S[i] = s;
+		i++;
+	}
+	in.close();
+
+	BubbleSort(S, datanum);
+	
+  cout << "bubbleSort:" << cnt1 << ":" << cnt2 << endl;
+	
+	in.open("./data1000.txt");
+	in >> datanum;
+	S = new int[1000];
+	i = 0;
+
+	while(!in.eof()){
+		int s;
+		in >> s;
+		if(in.eof()){
+			break;
+		}
+		S[i] = s;
+		i++;
+	}
+	in.close();
+
+	BubbleSort(S, datanum);
+	
+  cout << "bubbleSort:" << cnt1 << ":" << cnt2 << endl;
+	
+	in.open("./data10000.txt");
+	in >> datanum;
+	S = new int[10000];
+	i = 0;
+
+	while(!in.eof()){
+		int s;
+		in >> s;
+		if(in.eof()){
+			break;
+		}
+		S[i] = s;
+		i++;
+	}
+	in.close();
+
+	BubbleSort(S, datanum);
+	
   cout << "bubbleSort:" << cnt1 << ":" << cnt2 << endl;
 	return 0;
 }

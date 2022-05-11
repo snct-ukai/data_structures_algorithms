@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "iostream": "cpp",
+    "istream": "cpp",
+    "ostream": "cpp",
+    "ios": "cpp",
+    "xlocnum": "cpp",
+    "streambuf": "cpp",
+    "xiosbase": "cpp",
+    "system_error": "cpp",
+    "cstdlib": "cpp",
+    "cerrno": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
+}
