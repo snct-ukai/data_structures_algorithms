@@ -9,7 +9,11 @@
     "xiosbase": "cpp",
     "system_error": "cpp",
     "cstdlib": "cpp",
-    "cerrno": "cpp"
+    "cerrno": "cpp",
+    "stdexcept": "cpp",
+    "string": "cpp",
+    "iosfwd": "cpp",
+    "xstring": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
