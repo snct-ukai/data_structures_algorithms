@@ -44,7 +44,7 @@ int BinarySearch(int x, vector<int> S, int N)
 		int mid = (B+T)/2;
 
 		if(S[mid]==x){
-      cout << "走査回数：" << count << endl;
+      cout << "key：" << x << "\t走査回数：" << count << endl;
 			return mid;
 		}
 		else if(S[mid]<x){
@@ -55,7 +55,7 @@ int BinarySearch(int x, vector<int> S, int N)
 		}
 	}
 
-  cout << "走査回数：" << count << endl;
+  cout << "key：" << x << "\t走査回数：" << count << endl;
 
 	return -1;
 }

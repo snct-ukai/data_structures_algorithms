@@ -8,11 +8,11 @@ int LinearSearch(int x, vector<int> S, int N)
 	for(int i=0; i<N; i++){
         count++;
 		if(S[i]==x){
-            cout << "走査回数：" << count << endl;
+            cout << "key：" << x << "\t走査回数：" << count << endl;
 			return i;
         }
 	}
-    cout << "走査回数：" << count << endl;
+    cout << "key：" << x << "\t走査回数：" << count << endl;
 	return -1;
 }
 
