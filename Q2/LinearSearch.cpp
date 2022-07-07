@@ -12,7 +12,7 @@ int LinearSearch(int x, vector<int> S, int N)
 			return i;
         }
 	}
-
+    cout << "走査回数：" << count << endl;
 	return -1;
 }
 
