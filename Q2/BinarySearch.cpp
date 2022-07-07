@@ -71,6 +71,8 @@ int main()
       S.push_back(n);
   }
 
+  QuickSort(S, 0, S.size());
+
 	cout << BinarySearch(20293, S, num) << '\n';
 	cout << BinarySearch(7789, S, num) << '\n';
 	cout << BinarySearch(4021, S, num) << '\n';
