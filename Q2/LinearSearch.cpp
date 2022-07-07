@@ -5,7 +5,8 @@ using namespace std;
 int LinearSearch(int x, vector<int> S, int N)
 {
     int count = 0;
-	for(count++, int i=0; i<N; i++){
+	for(int i=0; i<N; i++){
+        count++;
 		if(S[i]==x){
             cout << "走査回数：" << count << endl;
 			return i;
